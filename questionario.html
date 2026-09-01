@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsiMatch | Encontre seu psicólogo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="questionario.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Psi<span>Match</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#resultado">Resultado</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CABEÇALHO DO QUESTIONÁRIO -->
+  <header class="quiz-header">
+    <div class="container">
+      <p class="section-tag">Questionário de matching</p>
+      <h1>Vamos encontrar o psicólogo ideal para você</h1>
+      <p>Responda algumas perguntas rápidas. Leva menos de 2 minutos.</p>
+      <div class="progresso">
+        <div class="progresso-barra" id="barraProgresso"></div>
+      </div>
+      <p class="progresso-texto" id="textoProgresso">Pergunta 1 de 7</p>
+    </div>
+  </header>
+
+  <!-- PERGUNTAS -->
+  <section class="quiz">
+    <div class="container">
+      <form id="formQuiz">
+
+        <!-- PERGUNTA 1 -->
+        <div class="pergunta ativa" data-pergunta="1">
+          <h3>O que você está procurando?</h3>
+          <p class="pergunta-sub">Escolha a opção que mais se aproxima do seu momento.</p>
+          <div class="opcoes">
+            <label class="opcao"><input type="radio" name="p1" value="ansiedade"><span>Ansiedade e estresse</span></label>
+            <label class="opcao"><input type="radio" name="p1" value="depressao"><span>Depressão e tristeza</span></label>
+            <label class="opcao"><input type="radio" name="p1" value="tea"><span>TEA (autismo)</span></label>
+            <label class="opcao"><input type="radio" name="p1" value="tdah"><span>TDAH</span></label>
+            <label class="opcao"><input type="radio" name="p1" value="infantil"><span>Atendimento infantil</span></label>
+            <label class="opcao"><input type="radio" name="p1" value="adolescente"><span>Atendimento adolescente</span></label>
+            <label class="opcao"><input type="radio" name="p1" value="casal"><span>Terapia de casal</span></label>
+            <label class="opcao"><input type="radio" name="p1" value="outro"><span>Outro</span></label>
+          </div>
+        </div>
+
+        <!-- PERGUNTA 2 -->
+        <div class="pergunta" data-pergunta="2">
+          <h3>Para quem é o atendimento?</h3>
+          <div class="opcoes">
+            <label class="opcao"><input type="radio" name="p2" value="eu"><span>Para mim</span></label>
+            <label class="opcao"><input type="radio" name="p2" value="filho"><span>Para meu filho(a)</span></label>
+            <label class="opcao"><input type="radio" name="p2" value="casal"><span>Para mim e meu parceiro(a)</span></label>
+            <label class="opcao"><input type="radio" name="p2" value="outro"><span>Para outra pessoa</span></label>
+          </div>
+        </div>
+
+        <!-- PERGUNTA 3 -->
+        <div class="pergunta" data-pergunta="3">
+          <h3>Qual a faixa etária?</h3>
+          <div class="opcoes">
+            <label class="opcao"><input type="radio" name="p3" value="infantil"><span>Infantil (até 12 anos)</span></label>
+            <label class="opcao"><input type="radio" name="p3" value="adolescente"><span>Adolescente (13 a 17)</span></label>
+            <label class="opcao"><input type="radio" name="p3" value="adulto"><span>Adulto (18 a 59)</span></label>
+            <label class="opcao"><input type="radio" name="p3" value="idoso"><span>60+</span></label>
+          </div>
+        </div>
+
+        <!-- PERGUNTA 4 -->
+        <div class="pergunta" data-pergunta="4">
+          <h3>Como você prefere o atendimento?</h3>
+          <div class="opcoes">
+            <label class="opcao"><input type="radio" name="p4" value="online"><span>Online (videochamada)</span></label>
+            <label class="opcao"><input type="radio" name="p4" value="presencial"><span>Presencial</span></label>
+            <label class="opcao"><input type="radio" name="p4" value="tanto"><span>Tanto faz</span></label>
+          </div>
+        </div>
+
+        <!-- PERGUNTA 5 -->
+        <div class="pergunta" data-pergunta="5">
+          <h3>Você tem preferência de gênero do profissional?</h3>
+          <div class="opcoes">
+            <label class="opcao"><input type="radio" name="p5" value="sem"><span>Sem preferência</span></label>
+            <label class="opcao"><input type="radio" name="p5" value="feminino"><span>Feminino</span></label>
+            <label class="opcao"><input type="radio" name="p5" value="masculino"><span>Masculino</span></label>
+          </div>
+        </div>
+
+        <!-- PERGUNTA 6 -->
+        <div class="pergunta" data-pergunta="6">
+          <h3>Qual a faixa de valor por sessão?</h3>
+          <div class="opcoes">
+            <label class="opcao"><input type="radio" name="p6" value="ate100"><span>Até R$ 100</span></label>
+            <label class="opcao"><input type="radio" name="p6" value="100a200"><span>R$ 100 a R$ 200</span></label>
+            <label class="opcao"><input type="radio" name="p6" value="200a300"><span>R$ 200 a R$ 300</span></label>
+            <label class="opcao"><input type="radio" name="p6" value="acima300"><span>Acima de R$ 300</span></label>
+          </div>
+        </div>
+
+        <!-- PERGUNTA 7 -->
+        <div class="pergunta" data-pergunta="7">
+          <h3>Qual período você prefere para as sessões?</h3>
+          <div class="opcoes">
+            <label class="opcao"><input type="radio" name="p7" value="manha"><span>Manhã</span></label>
+            <label class="opcao"><input type="radio" name="p7" value="tarde"><span>Tarde</span></label>
+            <label class="opcao"><input type="radio" name="p7" value="noite"><span>Noite</span></label>
+            <label class="opcao"><input type="radio" name="p7" value="flexivel"><span>Horário flexível</span></label>
+          </div>
+        </div>
+
+        <!-- BOTÕES -->
+        <div class="quiz-botoes">
+          <button type="button" class="btn btn-outline" id="btnVoltar" onclick="voltar()">← Voltar</button>
+          <button type="button" class="btn btn-primario" id="btnAvancar" onclick="avancar()">Avançar →</button>
+          <button type="submit" class="btn btn-primario" id="btnVerResultado" style="display:none;">Ver meus resultados</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- RESULTADO -->
+  <section id="resultado" class="resultado" style="display:none;">
+    <div class="container">
+      <p class="section-tag">Seus resultados</p>
+      <h2 class="section-title">Psicólogos compatíveis com você</h2>
+      <p class="section-sub">Com base nas suas respostas, selecionamos 3 profissionais que podem combinar com o que você procura.</p>
+      <div class="resultado-cards" id="resultadoCards"></div>
+      <div class="resultado-cta">
+        <p>Não encontrou o que procurava? Fale com a gente e te ajudamos a achar o profissional ideal.</p>
+        <a class="btn btn-secundario" href="https://wa.me/55991813219" target="_blank">💬 Falar com a equipe</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container">
+      <p><strong>PsiMatch</strong> — Encontre o psicólogo ideal para você</p>
+      <p>© 2026 PsiMatch · Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script src="questionario.js"></script>
+</body>
+</html>
