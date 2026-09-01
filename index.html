@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsiMatch | Encontre o psicólogo ideal para você</title>
+  <meta name="description" content="Estamos criando uma nova forma de encontrar psicólogos. Cadastre-se como paciente ou psicólogo parceiro.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Psi<span>Match</span></div>
+      <ul class="nav-links">
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#para-quem">Para quem é</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-texto">
+        <span class="hero-badge">🌸 Em breve · Nova plataforma de psicologia</span>
+        <h1>Encontre o <em>psicólogo ideal</em> para você</h1>
+        <p>Responda algumas perguntas e nós indicamos profissionais compatíveis com o que você procura. Simples, acolhedor e baseado em evidências.</p>
+        <div class="hero-cta">
+          <a href="#form-paciente" class="btn btn-primario">Quero ser paciente</a>
+          <a href="#form-psicologo" class="btn btn-secundario">Quero ser psicólogo parceiro</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="avatar">🧠</div>
+        <h3>Como funciona o matching?</h3>
+        <p>Você responde algumas perguntas e recebe <strong>3 psicólogos</strong> que podem combinar com você.</p>
+        <div class="mini-passos">
+          <span>1. Responda</span>
+          <span>2. Combine</span>
+          <span>3. Agende</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona" class="como-funciona">
+    <div class="container">
+      <p class="section-tag">Como funciona</p>
+      <h2 class="section-title">Simples para todos</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="icone">🙋</div>
+          <h4>Para pacientes</h4>
+          <p>Responda um questionário rápido, receba indicações de psicólogos compatíveis e agende sua sessão online.</p>
+        </div>
+        <div class="card">
+          <div class="icone">🧑‍⚕️</div>
+          <h4>Para psicólogos</h4>
+          <p>Cadastre-se, envie seu CRP e documentação, monte seu perfil e receba pacientes alinhados à sua especialidade.</p>
+        </div>
+        <div class="card">
+          <div class="icone">🔒</div>
+          <h4>Com segurança</h4>
+          <p>Seus dados e informações de saúde protegidos com privacidade desde o início (LGPD).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É -->
+  <section id="para-quem" class="para-quem">
+    <div class="container">
+      <p class="section-tag">Para quem é</p>
+      <h2 class="section-title">Feita para todos os momentos</h2>
+      <p class="section-sub">Ansiedade, TEA, TDAH, casal, infantil, adolescente, adulto, sexualidade, luto e muito mais.</p>
+      <div class="tags">
+        <span>Ansiedade</span><span>Depressão</span><span>TEA</span><span>TDAH</span>
+        <span>Infantil</span><span>Adolescente</span><span>Adulto</span><span>Casal</span>
+        <span>Luto</span><span>Sexualidade</span><span>Terapia online</span><span>Saúde mental</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO PACIENTE -->
+  <section id="form-paciente" class="form-section">
+    <div class="container form-grid">
+      <div class="form-info">
+        <p class="section-tag">Paciente</p>
+        <h2>Quero ser paciente</h2>
+        <p>Deixe seu contato e avisaremos quando a plataforma estiver no ar. Você entra na lista de espera e recebe prioridade no acesso.</p>
+        <ul class="beneficios">
+          <li>✅ Acesso antecipado</li>
+          <li>✅ Indicação de psicólogos compatíveis</li>
+          <li>✅ Sem custo para entrar na lista</li>
+        </ul>
+      </div>
+      <form id="formPaciente" class="form-card">
+        <h3>Cadastro de interesse</h3>
+        <label>Nome completo <input type="text" id="pacNome" placeholder="Seu nome" required></label>
+        <label>E-mail <input type="email" id="pacEmail" placeholder="seu@email.com" required></label>
+        <label>WhatsApp <input type="tel" id="pacWhats" placeholder="(00) 00000-0000" required></label>
+        <label>O que você procura?
+          <select id="pacMotivo">
+            <option value="">Selecione...</option>
+            <option>Ansiedade</option>
+            <option>Depressão</option>
+            <option>TEA (autismo)</option>
+            <option>TDAH</option>
+            <option>Atendimento infantil</option>
+            <option>Atendimento adolescente</option>
+            <option>Terapia de casal</option>
+            <option>Outro</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primario btn-full">Entrar na lista de espera</button>
+        <p class="form-msg" id="msgPaciente"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO PSICÓLOGO -->
+  <section id="form-psicologo" class="form-section form-section-alt">
+    <div class="container form-grid">
+      <div class="form-info">
+        <p class="section-tag">Psicólogo</p>
+        <h2>Quero ser psicólogo parceiro</h2>
+        <p>Cadastre-se para ser um dos primeiros profissionais da nossa rede de psicólogos parceiros. Você ajuda a construir a plataforma conosco.</p>
+        <ul class="beneficios">
+          <li>✅ Seja um dos primeiros parceiros</li>
+          <li>✅ Receba pacientes alinhados à sua especialidade</li>
+          <li>✅ Participe do desenvolvimento da plataforma</li>
+        </ul>
+      </div>
+      <form id="formPsicologo" class="form-card">
+        <h3>Cadastro de interesse</h3>
+        <label>Nome completo <input type="text" id="psiNome" placeholder="Seu nome" required></label>
+        <label>CRP <input type="text" id="psiCrp" placeholder="Ex: 06/12345" required></label>
+        <label>E-mail <input type="email" id="psiEmail" placeholder="seu@email.com" required></label>
+        <label>WhatsApp <input type="tel" id="psiWhats" placeholder="(00) 00000-0000" required></label>
+        <label>Especialidades
+          <select id="psiEsp">
+            <option value="">Selecione...</option>
+            <option>Saúde mental</option>
+            <option>TEA (autismo)</option>
+            <option>ABA</option>
+            <option>Infantil</option>
+            <option>Adolescente</option>
+            <option>Casal</option>
+            <option>Outro</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-secundario btn-full">Quero ser parceiro</button>
+        <p class="form-msg" id="msgPsicologo"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta">
+    <div class="container">
+      <h2>Estamos construindo uma nova forma de cuidar da saúde mental</h2>
+      <p>Entre na lista de espera e seja um dos primeiros a usar a PsiMatch.</p>
+      <div class="hero-cta" style="justify-content:center;">
+        <a href="#form-paciente" class="btn btn-primario">Quero ser paciente</a>
+        <a href="#form-psicologo" class="btn btn-secundario">Quero ser psicólogo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer id="contato">
+    <div class="container">
+      <p><strong>PsiMatch</strong> — Encontre o psicólogo ideal para você</p>
+      <p>Em breve · Feita por quem vive a psicologia na prática</p>
+      <p style="margin-top:8px;">© 2026 PsiMatch · Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
