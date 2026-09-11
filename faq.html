@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perguntas Frequentes | PsiConecta</title>
+  <meta name="description" content="Perguntas frequentes da PsiConecta para pacientes e psicólogos.">
+  <style>
+    :root {
+      --bege: #F5EDDC;
+      --bege-claro: #FAF6EC;
+      --amarelo: #F7E8B8;
+      --amarelo-suave: #FBF0D0;
+      --marrom: #7A6A4F;
+      --marrom-escuro: #5C4F3A;
+      --texto: #4A4234;
+      --branco: #FFFFFF;
+      --sombra: 0 8px 30px rgba(122, 106, 79, 0.12);
+      --raio: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--texto);
+      background: var(--bege-claro);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      background: var(--branco);
+      box-shadow: 0 2px 12px rgba(122, 106, 79, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .logo { font-weight: 800; font-size: 1.3rem; color: var(--marrom-escuro); text-decoration: none; }
+    .logo span { color: var(--marrom); }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a { color: var(--texto); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--marrom-escuro); }
+    .btn-nav {
+      background: var(--marrom); color: #fff; padding: 9px 18px;
+      border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 0.92rem;
+    }
+    .btn-nav:hover { background: var(--marrom-escuro); }
+
+    .hero {
+      background: linear-gradient(160deg, var(--bege) 0%, var(--amarelo-suave) 50%, var(--bege-claro) 100%);
+      text-align: center;
+      padding: 60px 24px 50px;
+    }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; color: var(--marrom-escuro); margin-bottom: 12px; }
+    .hero p { font-size: 1.05rem; color: var(--texto); max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+    section { padding: 48px 0; }
+    .categoria-titulo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--marrom-escuro);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .faq { max-width: 780px; margin: 0 auto; }
+    .faq-item {
+      background: var(--branco); border-radius: 16px; box-shadow: var(--sombra);
+      margin-bottom: 14px; overflow: hidden;
+    }
+    .faq-pergunta {
+      width: 100%; text-align: left; background: none; border: none; padding: 18px 22px;
+      font-family: inherit; font-size: 1rem; font-weight: 700; color: var(--marrom-escuro);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .faq-pergunta .seta { transition: transform 0.3s; color: var(--marrom); }
+    .faq-item.aberto .faq-pergunta .seta { transform: rotate(180deg); }
+    .faq-resposta {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+      padding: 0 22px; font-size: 0.95rem; opacity: 0.9;
+    }
+    .faq-item.aberto .faq-resposta { max-height: 400px; padding: 0 22px 18px; }
+
+    footer {
+      background: var(--marrom-escuro); color: rgba(255,255,255,0.85);
+      padding: 44px 24px 30px; margin-top: 40px;
+    }
+    .footer-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+    }
+    .footer-col h4 { color: #fff; margin-bottom: 12px; font-size: 1rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-base {
+      max-width: 1100px; margin: 30px auto 0; padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem;
+      text-align: center; color: rgba(255,255,255,0.7);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links a:not(.btn-nav) { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html">Psi<span>Conecta</span></a>
+      <div class="nav-links">
+        <a href="psicologos.html">Psicólogos</a>
+        <a href="para-pacientes.html">Para pacientes</a>
+        <a href="para-psicologos.html">Para psicólogos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn-nav" href="psicologos.html">Encontrar psicólogo</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="container">
+      <h1>Perguntas frequentes</h1>
+      <p>Encontre respostas para as dúvidas mais comuns de pacientes e psicólogos.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+
+      <h2 class="categoria-titulo">Para pacientes</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-pergunta">É seguro? Meus dados ficam protegidos? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Sim. A plataforma segue a Lei Geral de Proteção de Dados (LGPD), com atenção especial para dados de saúde, que são considerados sensíveis. Suas informações não são compartilhadas sem seu consentimento.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">Preciso pagar para usar o site? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Não. A busca e a navegação são gratuitas. Você paga apenas pelo atendimento, diretamente ao psicólogo escolhido, conforme os valores informados no perfil.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">Como escolho entre tantos profissionais? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Filtre por especialidade, abordagem e valor. Leia os perfis com calma e escolha aquele com quem você sente mais conexão. Se quiser, pode conversar com mais de um antes de decidir.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">E se eu não me identificar com o psicólogo escolhido? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Está tudo bem — acontece. A relação terapêutica precisa de confiança. Você pode procurar outro profissional na plataforma sempre que quiser, sem custo ou burocracia.</div>
+        </div>
+      </div>
+
+      <h2 class="categoria-titulo" style="margin-top: 40px;">Para psicólogos</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-pergunta">Quais os requisitos para me cadastrar? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Ter CRP ativo e verificado no Conselho de Psicologia, e preencher o formulário com seus dados profissionais: formação, abordagem, especialidades e valores. Nossa equipe verifica o registro antes de publicar o perfil.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">Como funciona o pagamento das sessões? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Você combina o pagamento diretamente com o paciente. A plataforma não intermedia o pagamento na fase inicial. A comissão incide apenas quando a sessão é agendada pela plataforma (fase futura), com percentual claro e divulgado.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">Posso sair quando quiser? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Sim. Você pode encerrar sua participação a qualquer momento, sem multa ou burocracia. Basta solicitar a remoção do seu perfil pela nossa equipe de suporte.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PsiConecta</h4>
+        <a href="sobre.html">Sobre</a>
+        <a href="para-pacientes.html">Para pacientes</a>
+        <a href="para-psicologos.html">Para psicólogos</a>
+        <a href="#">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h4>Informações</h4>
+        <a href="faq.html">FAQ</a>
+        <a href="politica.html">Política de Privacidade</a>
+        <a href="termos.html">Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="#">CNPJ: [ADICIONAR]</a>
+        <a href="#">Responsável Técnica: [NOME + CRP]</a>
+        <a href="mailto:contato@psiconecta.com.br">contato@psiconecta.com.br</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      © 2026 PsiConecta · Todos os direitos reservados
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+      item.querySelector('.faq-pergunta').addEventListener('click', function () {
+        item.classList.toggle('aberto');
+      });
+    });
+  </script>
+</body>
+</html>

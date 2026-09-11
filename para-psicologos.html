@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Psicólogos | PsiConecta</title>
+  <meta name="description" content="Amplie seu consultório online com a PsiConecta. Transparência, sem competição predatória e sem pressão de resposta. Cadastre-se gratuitamente.">
+  <style>
+    :root {
+      --bege: #F5EDDC;
+      --bege-claro: #FAF6EC;
+      --amarelo: #F7E8B8;
+      --amarelo-suave: #FBF0D0;
+      --marrom: #7A6A4F;
+      --marrom-escuro: #5C4F3A;
+      --texto: #4A4234;
+      --branco: #FFFFFF;
+      --verde-whats: #25D366;
+      --verde-whats-escuro: #1DA851;
+      --verde-sucesso: #2E8B57;
+      --sombra: 0 8px 30px rgba(122, 106, 79, 0.12);
+      --raio: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--texto);
+      background: var(--bege-claro);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== NAVBAR (igual às outras páginas) ===== */
+    header {
+      background: var(--branco);
+      box-shadow: 0 2px 12px rgba(122, 106, 79, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .logo { font-weight: 800; font-size: 1.3rem; color: var(--marrom-escuro); text-decoration: none; }
+    .logo span { color: var(--marrom); }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a { color: var(--texto); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--marrom-escuro); }
+    .btn-nav {
+      background: var(--marrom); color: #fff; padding: 9px 18px;
+      border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 0.92rem;
+    }
+    .btn-nav:hover { background: var(--marrom-escuro); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(160deg, var(--bege) 0%, var(--amarelo-suave) 50%, var(--bege-claro) 100%);
+      text-align: center;
+      padding: 72px 24px 60px;
+    }
+    .hero h1 { font-size: 2.4rem; font-weight: 800; color: var(--marrom-escuro); max-width: 720px; margin: 0 auto 16px; }
+    .hero p { font-size: 1.1rem; color: var(--texto); max-width: 600px; margin: 0 auto 32px; opacity: 0.92; }
+    .hero-botoes { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.02rem;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-marrom { background: var(--marrom); color: #fff; box-shadow: var(--sombra); }
+    .btn-marrom:hover { background: var(--marrom-escuro); }
+    .btn-branco { background: var(--branco); color: var(--marrom-escuro); box-shadow: var(--sombra); border-color: rgba(122, 106, 79, 0.15); }
+    .btn-branco:hover { box-shadow: 0 10px 30px rgba(122, 106, 79, 0.2); }
+
+    /* ===== SEÇÕES ===== */
+    section { padding: 64px 0; }
+    .titulo-secao { text-align: center; font-size: 1.9rem; font-weight: 800; color: var(--marrom-escuro); margin-bottom: 10px; }
+    .subtitulo-secao { text-align: center; color: var(--texto); opacity: 0.85; max-width: 620px; margin: 0 auto 40px; }
+
+    /* Diferenciais */
+    .diferenciais { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .diferencial {
+      background: var(--branco); border-radius: var(--raio); padding: 28px 24px;
+      box-shadow: var(--sombra); text-align: center;
+    }
+    .diferencial .icone { font-size: 2.2rem; margin-bottom: 12px; }
+    .diferencial h3 { color: var(--marrom-escuro); font-size: 1.05rem; margin-bottom: 8px; }
+    .diferencial p { font-size: 0.9rem; opacity: 0.85; }
+
+    /* Planos */
+    .planos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+    .plano {
+      background: var(--branco); border-radius: var(--raio); padding: 32px 26px;
+      box-shadow: var(--sombra); display: flex; flex-direction: column;
+      border: 2px solid transparent;
+    }
+    .plano.destaque {
+      border-color: var(--marrom);
+      background: linear-gradient(160deg, var(--bege) 0%, var(--amarelo-suave) 100%);
+    }
+    .plano .badge {
+      display: inline-block; align-self: flex-start;
+      background: var(--marrom); color: #fff; font-size: 0.72rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 50px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px;
+    }
+    .plano h3 { color: var(--marrom-escuro); font-size: 1.25rem; margin-bottom: 6px; }
+    .plano .preco { font-size: 1.5rem; font-weight: 800; color: var(--marrom-escuro); margin-bottom: 16px; }
+    .plano .preco small { font-size: 0.85rem; font-weight: 500; color: var(--texto); opacity: 0.8; }
+    .plano ul { list-style: none; margin-bottom: 24px; flex: 1; }
+    .plano ul li {
+      display: flex; align-items: flex-start; gap: 8px; padding: 7px 0;
+      font-size: 0.92rem; border-bottom: 1px solid rgba(122, 106, 79, 0.1);
+    }
+    .plano ul li:last-child { border-bottom: none; }
+    .plano ul li::before { content: "✓"; color: var(--verde-sucesso); font-weight: 700; }
+    .plano .btn { width: 100%; }
+
+    /* Como se cadastrar */
+    .passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .passo {
+      background: var(--branco); border-radius: var(--raio); padding: 28px 24px;
+      box-shadow: var(--sombra); text-align: center;
+    }
+    .passo .num {
+      width: 46px; height: 46px; border-radius: 50%; background: var(--amarelo);
+      color: var(--marrom-escuro); font-weight: 800; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+    }
+    .passo h3 { color: var(--marrom-escuro); font-size: 1.05rem; margin-bottom: 6px; }
+    .passo p { font-size: 0.9rem; opacity: 0.85; }
+
+    /* FAQ */
+    .faq { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      background: var(--branco); border-radius: 16px; box-shadow: var(--sombra);
+      margin-bottom: 14px; overflow: hidden;
+    }
+    .faq-pergunta {
+      width: 100%; text-align: left; background: none; border: none; padding: 18px 22px;
+      font-family: inherit; font-size: 1rem; font-weight: 700; color: var(--marrom-escuro);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .faq-pergunta .seta { transition: transform 0.3s; color: var(--marrom); }
+    .faq-item.aberto .faq-pergunta .seta { transform: rotate(180deg); }
+    .faq-resposta {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+      padding: 0 22px; font-size: 0.95rem; opacity: 0.9;
+    }
+    .faq-item.aberto .faq-resposta { max-height: 300px; padding: 0 22px 18px; }
+
+    /* CTA final */
+    .cta {
+      background: linear-gradient(135deg, var(--marrom) 0%, var(--marrom-escuro) 100%);
+      border-radius: var(--raio); color: #fff; text-align: center; padding: 56px 30px;
+    }
+    .cta h2 { color: #fff; font-size: 1.8rem; margin-bottom: 12px; }
+    .cta p { color: rgba(255,255,255,0.9); margin-bottom: 28px; }
+    .cta .btn-branco { background: #fff; }
+    .cta .btn-branco:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+
+    /* ===== FOOTER (igual às outras páginas) ===== */
+    footer {
+      background: var(--marrom-escuro); color: rgba(255,255,255,0.85);
+      padding: 44px 24px 30px; margin-top: 40px;
+    }
+    .footer-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+    }
+    .footer-col h4 { color: #fff; margin-bottom: 12px; font-size: 1rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-base {
+      max-width: 1100px; margin: 30px auto 0; padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; text-align: center; color: rgba(255,255,255,0.7);
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 900px) {
+      .diferenciais, .planos, .passos { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .diferenciais, .planos, .passos, .footer-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.7rem; }
+      .nav-links a:not(.btn-nav) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR (mesma das outras páginas) -->
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html">Psi<span>Conecta</span></a>
+      <div class="nav-links">
+        <a href="psicologos.html">Psicólogos</a>
+        <a href="para-pacientes.html">Para pacientes</a>
+        <a href="para-psicologos.html">Para psicólogos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn-nav" href="psicologos.html">Encontrar psicólogo</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <h1>Amplie seu consultório online. Sem competição predatória, com transparência.</h1>
+      <p>Na PsiConecta, você é valorizado pelo que faz de melhor: cuidar de pessoas. Sem pressão de resposta, com critérios claros e comissão só quando a plataforma realmente te ajudar.</p>
+      <div class="hero-botoes">
+        <a class="btn btn-marrom" href="#cadastro">Quero me cadastrar</a>
+        <a class="btn btn-branco" href="#planos">Ver planos</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIFERENCIAIS -->
+  <section>
+    <div class="container">
+      <h2 class="titulo-secao">Por que a PsiConecta é diferente</h2>
+      <p class="subtitulo-secao">Transparência em tudo o que fazemos. Sem pegadinhas, sem letras miúdas.</p>
+      <div class="diferenciais">
+        <div class="diferencial">
+          <div class="icone">🔍</div>
+          <h3>Destaque transparente</h3>
+          <p>O critério de destaque do perfil é claro e divulgado. Nada de favorecimento escondido.</p>
+        </div>
+        <div class="diferencial">
+          <div class="icone">⏰</div>
+          <h3>Sem pressão de resposta</h3>
+          <p>Você responde no seu ritmo. Não exigimos resposta em 24h nem punimos quem não responde rápido.</p>
+        </div>
+        <div class="diferencial">
+          <div class="icone">💰</div>
+          <h3>Valor mínimo respeitado</h3>
+          <p>Respeitamos a tabela mínima recomendada. Valorizamos seu trabalho e sua formação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section id="planos" style="background: var(--branco);">
+    <div class="container">
+      <h2 class="titulo-secao">Planos e comissão</h2>
+      <p class="subtitulo-secao">Comece grátis e evolua quando fizer sentido. Sem fidelidade, sem surpresas.</p>
+      <div class="planos">
+
+        <!-- Plano Gratuito -->
+        <div class="plano">
+          <h3>Gratuito</h3>
+          <p class="preco">R$ 0 <small>/mês</small></p>
+          <ul>
+            <li>Perfil básico na listagem</li>
+            <li>CRP verificado</li>
+            <li>Botão de WhatsApp</li>
+            <li>Especialidades e abordagem</li>
+          </ul>
+          <a class="btn btn-branco" href="#cadastro">Começar grátis</a>
+        </div>
+
+        <!-- Plano Destaque -->
+        <div class="plano destaque">
+          <span class="badge">Mais visibilidade</span>
+          <h3>Destaque</h3>
+          <p class="preco">R$ 49 <small>/mês</small></p>
+          <ul>
+            <li>Tudo do plano gratuito</li>
+            <li>Posição privilegiada na busca</li>
+            <li>Selo de destaque no perfil</li>
+            <li>Estatísticas de visualizações</li>
+            <li>Suporte prioritário</li>
+          </ul>
+          <a class="btn btn-marrom" href="#cadastro">Quero destaque</a>
+        </div>
+
+        <!-- Comissão -->
+        <div class="plano">
+          <h3>Comissão</h3>
+          <p class="preco">Só quando ajudar</p>
+          <ul>
+            <li>Comissão apenas em sessões agendadas pela plataforma</li>
+            <li>Atendimentos fora da plataforma não geram comissão</li>
+            <li>Percentual claro e divulgado</li>
+            <li>Sem taxa de cadastro</li>
+          </ul>
+          <a class="btn btn-branco" href="#cadastro">Entender melhor</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO SE CADASTRAR -->
+  <section>
+    <div class="container">
+      <h2 class="titulo-secao">Como se cadastrar</h2>
+      <p class="subtitulo-secao">Simples e rápido. Seu perfil no ar em poucos dias.</p>
+      <div class="passos">
+        <div class="passo">
+          <div class="num">1</div>
+          <h3>Preencha o formulário</h3>
+          <p>Informe CRP, formação, abordagem, especialidades e valores.</p>
+        </div>
+        <div class="passo">
+          <div class="num">2</div>
+          <h3>Verificamos seu registro</h3>
+          <p>Nossa equipe confirma seu CRP no Conselho de Psicologia.</p>
+        </div>
+        <div class="passo">
+          <div class="num">3</div>
+          <h3>Perfil no ar</h3>
+          <p>Seu perfil fica disponível para os pacientes em até 3 dias úteis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background: var(--branco);">
+    <div class="container">
+      <h2 class="titulo-secao">Perguntas frequentes</h2>
+      <p class="subtitulo-secao">Dúvidas comuns de quem quer se cadastrar.</p>
+      <div class="faq">
+
+        <div class="faq-item">
+          <button class="faq-pergunta">Como recebo pelos atendimentos? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Você combina o pagamento diretamente com o paciente. A plataforma não intermedia o pagamento na fase inicial — a comissão incide apenas quando a sessão é agendada pela plataforma (fase futura).</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-pergunta">Preciso emitir nota fiscal? <span class="seta">▼</span></button>
+          <div class="faq-resposta">A emissão de nota fiscal segue as regras do seu CNPJ ou CPF e da legislação vigente. A plataforma não é responsável pela emissão — cada profissional gerencia sua parte conforme a legislação.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-pergunta">Posso definir meus próprios valores e horários? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Sim! Você define seus valores (respeitando a tabela mínima recomendada) e seus horários de atendimento. A plataforma apenas exibe as informações que você cadastrar.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-pergunta">Como funciona o suporte da plataforma? <span class="seta">▼</span></button>
+          <div class="faq-resposta">Oferecemos suporte por e-mail e WhatsApp para dúvidas sobre cadastro, perfil e uso da plataforma. No plano Destaque, o suporte é prioritário.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section>
+    <div class="container">
+      <div class="cta" id="cadastro">
+        <h2>Quero me cadastrar</h2>
+        <p>Preencha o formulário e comece a receber pacientes. É grátis para começar.</p>
+        <!-- ⚠️ TROQUE o href="#" pelo link do Google Forms quando criar o formulário de cadastro -->
+        <a class="btn btn-branco" href="#">📝 Preencher formulário de cadastro</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (mesmo das outras páginas) -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PsiConecta</h4>
+        <a href="sobre.html">Sobre</a>
+        <a href="para-pacientes.html">Para pacientes</a>
+        <a href="para-psicologos.html">Para psicólogos</a>
+        <a href="#">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h4>Informações</h4>
+        <a href="faq.html">FAQ</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="#">CNPJ: [ADICIONAR]</a>
+        <a href="#">Responsável Técnica: [NOME + CRP]</a>
+        <a href="mailto:contato@psiconecta.com.br">contato@psiconecta.com.br</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      © 2026 PsiConecta · Todos os direitos reservados
+    </div>
+  </footer>
+
+  <!-- SCRIPT: FAQ abre/fecha -->
+  <script>
+    // Cada pergunta do FAQ abre/fecha a resposta ao clicar
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+      item.querySelector('.faq-pergunta').addEventListener('click', function () {
+        item.classList.toggle('aberto');
+      });
+    });
+  </script>
+</body>
+</html>

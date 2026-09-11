@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thayse Bianchin Rambo | PsiConecta</title>
+  <meta name="description" content="Perfil da psicóloga Thayse Bianchin Rambo (CRP 07/32555). Terapia Cognitivo Comportamental (TCC) online.">
+  <style>
+    :root {
+      --bege: #F5EDDC;
+      --bege-claro: #FAF6EC;
+      --amarelo: #F7E8B8;
+      --amarelo-suave: #FBF0D0;
+      --marrom: #7A6A4F;
+      --marrom-escuro: #5C4F3A;
+      --texto: #4A4234;
+      --branco: #FFFFFF;
+      --verde-whats: #25D366;
+      --verde-whats-escuro: #1DA851;
+      --verde-sucesso: #2E8B57;
+      --sombra: 0 8px 30px rgba(122, 106, 79, 0.12);
+      --raio: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--texto);
+      background: var(--bege-claro);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== NAVBAR (igual às outras páginas) ===== */
+    header {
+      background: var(--branco);
+      box-shadow: 0 2px 12px rgba(122, 106, 79, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .logo { font-weight: 800; font-size: 1.3rem; color: var(--marrom-escuro); text-decoration: none; }
+    .logo span { color: var(--marrom); }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a { color: var(--texto); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--marrom-escuro); }
+    .btn-nav {
+      background: var(--marrom); color: #fff; padding: 9px 18px;
+      border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 0.92rem;
+    }
+    .btn-nav:hover { background: var(--marrom-escuro); }
+
+    /* ===== CABEÇALHO DO PERFIL ===== */
+    .topo-perfil {
+      background: linear-gradient(160deg, var(--bege) 0%, var(--amarelo-suave) 50%, var(--bege-claro) 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .voltar {
+      display: inline-block;
+      color: var(--marrom);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+    .voltar:hover { color: var(--marrom-escuro); }
+    .avatar-grande {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--marrom-escuro);
+      background: linear-gradient(135deg, var(--amarelo), var(--bege));
+      border: 4px solid var(--branco);
+      box-shadow: var(--sombra);
+    }
+    /* Quando tiver a foto real, use esta classe (explico no final) */
+    .foto-real {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--branco);
+      box-shadow: var(--sombra);
+      display: none;
+    }
+    .nome-perfil { font-size: 1.9rem; font-weight: 800; color: var(--marrom-escuro); margin-bottom: 6px; }
+    .cargo-perfil { color: var(--marrom); font-weight: 600; font-size: 1.05rem; margin-bottom: 12px; }
+    .crp-linha {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--branco);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--texto);
+      box-shadow: var(--sombra);
+    }
+    .selo {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(46, 139, 87, 0.12);
+      color: var(--verde-sucesso);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+
+    /* ===== CONTEÚDO DO PERFIL ===== */
+    section.conteudo { padding: 44px 0 20px; }
+    .card {
+      background: var(--branco);
+      border-radius: var(--raio);
+      padding: 30px 28px;
+      box-shadow: var(--sombra);
+      margin-bottom: 24px;
+    }
+    .rotulo {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--marrom);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .card h2 { color: var(--marrom-escuro); font-size: 1.35rem; margin-bottom: 12px; font-weight: 800; }
+    .card p { font-size: 0.98rem; margin-bottom: 12px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* Mini-cards de informação (Atendimento, Idioma, Público, Valor) */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .info-box {
+      background: var(--bege-claro);
+      border-radius: 16px;
+      padding: 16px 14px;
+      text-align: center;
+    }
+    .info-rotulo {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--marrom);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .info-valor {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--marrom-escuro);
+    }
+
+    /* Chips de especialidades */
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+    .chip {
+      background: var(--bege-claro);
+      border: 1px solid rgba(122, 106, 79, 0.12);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--texto);
+    }
+
+    /* Passos de como funciona */
+    .passos-lista { list-style: none; }
+    .passos-lista li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(122, 106, 79, 0.1);
+      font-size: 0.97rem;
+    }
+    .passos-lista li:last-child { border-bottom: none; }
+    .passos-lista .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--amarelo);
+      color: var(--marrom-escuro);
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* CTA final */
+    .cta {
+      background: linear-gradient(135deg, var(--marrom) 0%, var(--marrom-escuro) 100%);
+      border-radius: var(--raio);
+      color: #fff;
+      text-align: center;
+      padding: 44px 28px;
+      margin-bottom: 24px;
+    }
+    .cta h2 { color: #fff; font-size: 1.5rem; margin-bottom: 10px; }
+    .cta p { color: rgba(255,255,255,0.9); margin-bottom: 24px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-whats { background: var(--verde-whats); color: #fff; box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3); }
+    .btn-whats:hover { background: var(--verde-whats-escuro); }
+    .btn-branco { background: #fff; color: var(--marrom-escuro); }
+
+    /* ===== FOOTER (igual às outras páginas) ===== */
+    footer {
+      background: var(--marrom-escuro);
+      color: rgba(255,255,255,0.85);
+      padding: 44px 24px 30px;
+      margin-top: 20px;
+    }
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .footer-col h4 { color: #fff; margin-bottom: 12px; font-size: 1rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-base {
+      max-width: 1100px;
+      margin: 30px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.85rem;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 800px) {
+      .info-grid { grid-template-columns: 1fr 1fr; }
+      .nome-perfil { font-size: 1.6rem; }
+    }
+    @media (max-width: 600px) {
+      .info-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links a:not(.btn-nav) { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR (mesma da Home e da listagem) -->
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html">Psi<span>Conecta</span></a>
+      <div class="nav-links">
+        <a href="psicologos.html">Psicólogos</a>
+        <a href="para-pacientes.html">Para pacientes</a>
+        <a href="para-psicologos.html">Para psicólogos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn-nav" href="psicologos.html">Encontrar psicólogo</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CABEÇALHO DO PERFIL -->
+  <div class="topo-perfil">
+    <div class="container">
+      <a class="voltar" href="psicologos.html">← Voltar para a listagem</a>
+
+      <!-- Avatar com iniciais (funciona sem foto) -->
+      <div class="avatar-grande" id="avatar">TB</div>
+
+      <!-- FOTO REAL (use quando tiver a foto): descomente as 2 linhas abaixo e comente o avatar acima
+      <img class="foto-real" src="assets/thayse.jpg" alt="Thayse Bianchin Rambo"> -->
+
+      <h1 class="nome-perfil">Thayse Bianchin Rambo</h1>
+      <p class="cargo-perfil">Psicóloga Clínica</p>
+      <p class="crp-linha">
+        CRP: 07/32555
+        <span class="selo">✓ CRP Verificado</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO -->
+  <section class="conteudo">
+    <div class="container">
+
+      <!-- INFORMAÇÕES RÁPIDAS -->
+      <div class="info-grid">
+        <div class="info-box">
+          <p class="info-rotulo">Atendimento</p>
+          <p class="info-valor">Online</p>
+        </div>
+        <div class="info-box">
+          <p class="info-rotulo">Idioma</p>
+          <p class="info-valor">Português</p>
+        </div>
+        <div class="info-box">
+          <p class="info-rotulo">Público</p>
+          <p class="info-valor">Adultos e adolescentes</p>
+        </div>
+        <div class="info-box">
+          <p class="info-rotulo">Valor</p>
+          <p class="info-valor">R$ 150 / sessão</p>
+        </div>
+      </div>
+
+      <!-- APRESENTAÇÃO -->
+      <div class="card">
+        <p class="rotulo">Apresentação</p>
+        <h2>Um espaço seguro para você</h2>
+        <p>Oi! Eu sou a psicóloga Thayse Bianchin Rambo, estou aqui para acolher as pequenas transformações que acontecem quando alguém se sente realmente visto. Meu trabalho é construir um espaço leve, seguro e sem julgamentos, onde você possa falar sobre o que sente, entender seus processos e encontrar caminhos mais tranquilos para viver.</p>
+        <p>Acredito que cada pessoa carrega sua própria história, e meu papel é caminhar ao seu lado nesse processo — respeitando seu tempo, suas experiências e suas necessidades. Trabalho de forma simples, humana e próxima, valorizando o diálogo, a autenticidade e o autoconhecimento.</p>
+      </div>
+
+      <!-- ABORDAGEM -->
+      <div class="card">
+        <p class="rotulo">Abordagem</p>
+        <h2>Terapia Cognitivo Comportamental (TCC)</h2>
+        <p>A TCC é uma abordagem baseada em evidências que ajuda você a entender como seus pensamentos, emoções e comportamentos se conectam. Trabalhamos juntos para identificar padrões que causam sofrimento e construir formas mais saudáveis de lidar com eles.</p>
+      </div>
+
+      <!-- ESPECIALIDADES -->
+      <div class="card">
+        <p class="rotulo">Especialidades</p>
+        <h2>

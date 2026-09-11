@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termos de Uso | PsiConecta</title>
+  <meta name="description" content="Termos de Uso da PsiConecta.">
+  <style>
+    :root {
+      --bege: #F5EDDC;
+      --bege-claro: #FAF6EC;
+      --amarelo: #F7E8B8;
+      --amarelo-suave: #FBF0D0;
+      --marrom: #7A6A4F;
+      --marrom-escuro: #5C4F3A;
+      --texto: #4A4234;
+      --branco: #FFFFFF;
+      --sombra: 0 8px 30px rgba(122, 106, 79, 0.12);
+      --raio: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--texto);
+      background: var(--bege-claro);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      background: var(--branco);
+      box-shadow: 0 2px 12px rgba(122, 106, 79, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .logo { font-weight: 800; font-size: 1.3rem; color: var(--marrom-escuro); text-decoration: none; }
+    .logo span { color: var(--marrom); }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a { color: var(--texto); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--marrom-escuro); }
+    .btn-nav {
+      background: var(--marrom); color: #fff; padding: 9px 18px;
+      border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 0.92rem;
+    }
+    .btn-nav:hover { background: var(--marrom-escuro); }
+
+    .hero {
+      background: linear-gradient(160deg, var(--bege) 0%, var(--amarelo-suave) 50%, var(--bege-claro) 100%);
+      text-align: center;
+      padding: 60px 24px 50px;
+    }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; color: var(--marrom-escuro); margin-bottom: 12px; }
+    .hero p { font-size: 1rem; color: var(--texto); max-width: 600px; margin: 0 auto; opacity: 0.85; }
+
+    section { padding: 48px 0; }
+    .documento { max-width: 780px; margin: 0 auto; }
+    .card {
+      background: var(--branco);
+      border-radius: var(--raio);
+      padding: 34px 32px;
+      box-shadow: var(--sombra);
+      margin-bottom: 20px;
+    }
+    .card h2 { color: var(--marrom-escuro); font-size: 1.3rem; margin-bottom: 12px; font-weight: 800; }
+    .card p { font-size: 0.97rem; margin-bottom: 12px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card ul { list-style: none; margin-bottom: 12px; }
+    .card ul li {
+      display: flex; align-items: flex-start; gap: 10px; padding: 7px 0;
+      font-size: 0.95rem; border-bottom: 1px solid rgba(122, 106, 79, 0.1);
+    }
+    .card ul li:last-child { border-bottom: none; }
+    .card ul li::before { content: "•"; color: var(--marrom); font-weight: 700; }
+    .data { font-size: 0.85rem; color: var(--texto); opacity: 0.7; text-align: center; margin-bottom: 24px; }
+
+    footer {
+      background: var(--marrom-escuro); color: rgba(255,255,255,0.85);
+      padding: 44px 24px 30px; margin-top: 40px;
+    }
+    .footer-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+    }
+    .footer-col h4 { color: #fff; margin-bottom: 12px; font-size: 1rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-base {
+      max-width: 1100px; margin: 30px auto 0; padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem;
+      text-align: center; color: rgba(255,255,255,0.7);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links a:not(.btn-nav) { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.7rem; }
+      .card { padding: 26px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html">Psi<span>Conecta</span></a>
+      <div class="nav-links">
+        <a href="psicologos.html">Psicólogos</a>
+        <a href="para-pacientes.html">Para pacientes</a>
+        <a href="para-psicologos.html">Para psicólogos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn-nav" href="psicologos.html">Encontrar psicólogo</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="container">
+      <h1>Termos de Uso</h1>
+      <p>As regras de uso da PsiConecta para pacientes e psicólogos.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="documento">
+        <p class="data">Última atualização: [DATA]</p>
+
+        <div class="card">
+          <h2>1. Sobre a plataforma</h2>
+          <p>A PsiConecta é uma plataforma de intermediação que conecta pacientes a psicólogos. A plataforma <strong>não presta serviços de psicologia</strong> e <strong>não é responsável pelo conteúdo das sessões</strong>, que ocorrem diretamente entre paciente e profissional.</p>
+        </div>
+
+        <div class="card">
+          <h2>2. Papel da plataforma</h2>
+          <p>A PsiConecta atua como <strong>intermediária</strong>, exibindo perfis de psicólogos e facilitando o contato inicial. A relação terapêutica, o agendamento e o pagamento são estabelecidos diretamente entre paciente e psicólogo.</p>
+        </div>
+
+        <div class="card">
+          <h2>3. Para pacientes</h2>
+          <ul>
+            <li>A navegação e a busca são gratuitas</li>
+            <li>O pagamento do atendimento é combinado diretamente com o psicólogo</li>
+            <li>A plataforma não substitui atendimento de urgência — em crise, ligue 188 (CVV) ou procure um hospital</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>4. Para psicólogos</h2>
+          <ul>
+            <li>É obrigatório ter CRP ativo e verificado</li>
+            <li>O profissional é responsável pela veracidade das informações do perfil</li>
+            <li>O profissional responde pelo seu atendimento conforme o Código de Ética do Psicólogo</li>
+            <li>O critério de destaque é transparente e divulgado</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>5. Responsabilidades</h2>
+          <p>Cada parte é responsável por suas obrigações: a plataforma pela exibição dos perfis; o psicólogo pelo atendimento e conduta profissional; o paciente pelo uso adequado da plataforma.</p>
+        </div>
+
+        <div class="card">
+          <h2>6. Alterações</h2>
+          <p>Estes Termos podem ser atualizados. A versão vigente estará sempre disponível nesta página, com a data de atualização.</p>
+        </div>
+
+        <div class="card">
+          <h2>7. Contato</h2>
+          <p>Dúvidas sobre estes Termos: <strong>[E-MAIL DE CONTATO]</strong>.</p>
+          <p style="font-size:0.85rem;opacity:0.8;">⚠️ Este documento é um modelo inicial e <strong>deve ser revisado por um advogado</strong> antes da publicação oficial.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PsiConecta</h4>
+        <a href="sobre.html">Sobre</a>
+        <a href="para-pacientes.html">Para pacientes</a>
+        <a href="para-psicologos.html">Para psicólogos</a>
+        <a href="#">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h4>Informações</h4>
+        <a href="faq.html">FAQ</a>
+        <a href="politica.html">Política de Privacidade</a>
+        <a href="termos.html">Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="#">CNPJ: [ADICIONAR]</a>
+        <a href="#">Responsável Técnica: [NOME + CRP]</a>
+        <a href="mailto:contato@psiconecta.com.br">contato@psiconecta.com.br</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      © 2026 PsiConecta · Todos os direitos reservados
+    </div>
+  </footer>
+
+</body>
+</html>
